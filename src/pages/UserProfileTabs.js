@@ -70,8 +70,6 @@ export default function BasicTabs() {
      }, []);
 
      const savedBookmark = useBookmarkData();
-     // console.log(savedBookmark);
-
      let post = [];
      if (savedBookmark && savedBookmark.length > 0) {
           post = savedBookmark.map((val, index) => ({
