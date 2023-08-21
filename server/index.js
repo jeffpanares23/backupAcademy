@@ -3,6 +3,7 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 const bcrypt = require('bcrypt')
+const port = 5000
 // standard for express
 app.use(cors());
 app.use(express.json());
@@ -373,6 +374,8 @@ app.delete('/deleteUser/:id', (req, res) => {
 });
 
 // port
-app.listen(8000, () => {
-  console.log('running on port 8000');
-})
+// app.listen(8000, () => {
+//   console.log('running on port 8000');
+// })
+
+app.listen(process.env.PORT || port, () => console.log('running on port $(port)'));
